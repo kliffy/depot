@@ -1,0 +1,10 @@
+Whattup <%= @order.name %>!
+
+Thanks for purchasing from my store!
+Too bad you will never get the items even if it ships.
+
+<%= render @order.line_items %>
+
+Another mail will be sent when it ships.
+
+<%= @order.ship_date %>
