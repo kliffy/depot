@@ -12,12 +12,13 @@ class ProductsController < ApplicationController
 
   # GET /products/1
   # GET /products/1.json
+  #curl http://localhost:3000/products/10.json
   def show
     @product = Product.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @product }
+      format.json
     end
   end
 
@@ -78,6 +79,21 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to products_url }
       format.json { head :no_content }
+    end
+  end
+
+  #feed stuff
+
+  #for json
+  #curl http://localhost:3000/products/10/who_bought.json
+  # {product: {id: 5, orders: [{id: 1 .. }, {id: 2 ...}]}}
+  #jbuilder
+  def who_bought
+    @product = Product.find(params[:id])
+
+    respond_to do |format|
+      #format.atom
+      format.json
     end
   end
 end
