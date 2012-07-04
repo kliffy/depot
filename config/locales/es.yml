@@ -1,0 +1,8 @@
+es:
+	layouts:
+		application:
+			title: "Bookshelfo"
+			home: "Inicio"
+			questions: "Preguntas"
+			news: "El Noticias"
+			contact: "Contacto"
